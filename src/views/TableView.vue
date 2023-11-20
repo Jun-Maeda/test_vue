@@ -1,0 +1,84 @@
+<template>
+  <v-data-table
+      :headers="headers"
+      :items="desserts"
+      item-key="name"
+      items-per-page="5"
+      density="compact"
+  ></v-data-table>
+
+  <v-data-table-server
+    v-model:items-per-page="itemsPerPage"
+    :headers="headers"
+    :items-length="totalItems"
+    :items="serverItems"
+    :loading="loading"
+    item-value="name"
+    @update:options="loadItems"
+  ></v-data-table-server>
+
+</template>
+<script>
+// align:'end'で右寄せにしている
+export default {
+  data: () => ({
+    headers: [
+      {title: 'Pyramid', align: 'start', sortable: false, value: 'name'},
+      {title: 'Location', align: 'end', value: 'location'},
+      {title: 'Construction Date', align: 'end', value: 'constructionDate'},
+      {
+        title: 'Dimensions',
+        align: 'center',
+        children: [
+          {title: 'Height (m)', align: 'end', value: 'height'},
+          {title: 'Base (m)', align: 'end', value: 'base'},
+          {title: 'Volume (m³)', align: 'end', value: 'volume'},
+        ],
+      },
+    ],
+    desserts: [
+      {
+        name: 'Great Pyramid of Giza',
+        location: 'Egypt',
+        height: '146.6',
+        base: '230.4',
+        volume: '2583285',
+        constructionDate: 'c. 2580–2560 BC',
+      },
+      {
+        name: 'Pyramid of Khafre',
+        location: 'Egypt',
+        height: '136.4',
+        base: '215.3',
+        volume: '1477485',
+        constructionDate: 'c. 2570 BC',
+      },
+      {
+        name: 'Red Pyramid',
+        location: 'Egypt',
+        height: '104',
+        base: '220',
+        volume: '1602895',
+        constructionDate: 'c. 2590 BC',
+      },
+      {
+        name: 'Bent Pyramid',
+        location: 'Egypt',
+        height: '101.1',
+        base: '188.6',
+        volume: '1200690',
+        constructionDate: 'c. 2600 BC',
+      },
+      {
+        name: 'Pyramid of the Sun',
+        location: 'Mexico',
+        height: '65',
+        base: '225',
+        volume: '1237097',
+        constructionDate: 'c. 200 CE',
+      },
+    ],
+  }),
+}
+
+</script>

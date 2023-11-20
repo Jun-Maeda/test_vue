@@ -34,7 +34,7 @@ import {RouterView} from 'vue-router'
       </v-list>
     </v-navigation-drawer>
 
-    <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
+    <v-main class="ma-5">
       <RouterView/>
     </v-main>
   </v-layout>
@@ -48,6 +48,8 @@ export default {
       {title: 'Home', to: '/', icon: 'mdi-clock'},
       {title: 'About', to: '/about', icon: 'mdi-clock'},
       {title: 'Form', to: '/form', icon: 'mdi-clock'},
+      {title: 'Table', to: '/table', icon: 'mdi-clock'},
+      {title: 'Table2', to: '/table2', icon: 'mdi-clock'},
     ],
     drawer: false,
   }),
