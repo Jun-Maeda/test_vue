@@ -7,32 +7,24 @@
       density="compact"
   ></v-data-table>
 
-  <v-data-table-server
-    v-model:items-per-page="itemsPerPage"
-    :headers="headers"
-    :items-length="totalItems"
-    :items="serverItems"
-    :loading="loading"
-    item-value="name"
-    @update:options="loadItems"
-  ></v-data-table-server>
 
 </template>
 <script>
 // align:'end'で右寄せにしている
+// headersのkeyをvalueにするとソートできなくなるので注意
 export default {
   data: () => ({
     headers: [
-      {title: 'Pyramid', align: 'start', sortable: false, value: 'name'},
-      {title: 'Location', align: 'end', value: 'location'},
-      {title: 'Construction Date', align: 'end', value: 'constructionDate'},
+      {title: 'Pyramid', align: 'start', sortable: false, key: 'name'},
+      {title: 'Location', align: 'end', key: 'location'},
+      {title: 'Construction Date', align: 'end', key: 'constructionDate'},
       {
         title: 'Dimensions',
         align: 'center',
         children: [
-          {title: 'Height (m)', align: 'end', value: 'height'},
-          {title: 'Base (m)', align: 'end', value: 'base'},
-          {title: 'Volume (m³)', align: 'end', value: 'volume'},
+          {title: 'Height (m)', align: 'end', key: 'height'},
+          {title: 'Base (m)', align: 'end', key: 'base'},
+          {title: 'Volume (m³)', align: 'end', key: 'volume'},
         ],
       },
     ],
