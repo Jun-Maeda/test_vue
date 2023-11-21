@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/table2',
       name: 'table2',
       component: () => import('../views/TableView2.vue')
+    },
+    {
+      path: '/zipcode',
+      name: 'zipcode',
+      component: () => import('../views/ZipView.vue')
     }
   ]
 })
