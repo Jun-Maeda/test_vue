@@ -5,6 +5,9 @@
       item-key="name"
       items-per-page="5"
       density="compact"
+      item-value="name"
+      item-selectable="selectable"
+      show-select
   ></v-data-table>
 
 

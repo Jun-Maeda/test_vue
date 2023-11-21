@@ -38,6 +38,11 @@ const router = createRouter({
       path: '/harry',
       name: 'harry',
       component: () => import('../views/HarryPotter.vue')
+    },
+    {
+      path: '/tab',
+      name: 'tab',
+      component: () => import('../views/TabView.vue')
     }
   ]
 })

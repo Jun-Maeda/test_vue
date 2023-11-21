@@ -87,6 +87,7 @@ export default {
       {title: 'Form', to: '/form', icon: 'mdi-map-marker'},
       {title: 'Table', to: '/table', icon: 'mdi-phone-outgoing'},
       {title: 'Table2', to: '/table2', icon: 'mdi-alert-circle-outline'},
+      {title: 'tab', to: '/tab', icon: 'mdi-earth'},
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
       {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},
     ],
