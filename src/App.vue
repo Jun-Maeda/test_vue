@@ -86,6 +86,7 @@ export default {
       {title: 'Table', to: '/table', icon: 'mdi-phone-outgoing'},
       {title: 'Table2', to: '/table2', icon: 'mdi-alert-circle-outline'},
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
+      {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},
     ],
     drawer: false,
     links: [

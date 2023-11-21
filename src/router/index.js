@@ -33,6 +33,11 @@ const router = createRouter({
       path: '/zipcode',
       name: 'zipcode',
       component: () => import('../views/ZipView.vue')
+    },
+    {
+      path: '/harry',
+      name: 'harry',
+      component: () => import('../views/HarryPotter.vue')
     }
   ]
 })
