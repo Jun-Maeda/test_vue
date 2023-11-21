@@ -50,8 +50,10 @@ import {RouterView} from 'vue-router'
       </v-list>
     </v-navigation-drawer>
 
-    <v-main class="ma-5">
-      <RouterView/>
+    <v-main>
+      <v-container>
+        <RouterView/>
+      </v-container>
     </v-main>
     <v-footer class="bg-grey-lighten-1" app>
       <v-row justify="center" no-gutters>

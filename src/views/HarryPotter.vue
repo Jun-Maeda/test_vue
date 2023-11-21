@@ -6,20 +6,22 @@
     <template v-slot:text>
       <v-text-field
           v-model="search"
-          label="Search"
+          label="検索"
           prepend-inner-icon="mdi-magnify"
           single-line
           variant="outlined"
           hide-details
+          class="v-col-sm-10 v-col-md-4 pa-0"
       ></v-text-field>
     </template>
-
-    <v-data-table
-        :headers="headers"
-        :items="characters"
-        :search="search"
-    ></v-data-table>
   </v-card>
+
+
+  <v-data-table
+      :headers="headers"
+      :items="characters"
+      :search="search"
+  ></v-data-table>
 </template>
 
 <script>
@@ -43,8 +45,8 @@ export default {
   }),
   mounted() {
     this.axios.get(url).then((res) => {
-        this.characters = res.data;
-      })
-}
+      this.characters = res.data;
+    })
+  }
 }
 </script>
