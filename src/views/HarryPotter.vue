@@ -21,6 +21,8 @@
       :headers="headers"
       :items="characters"
       :search="search"
+      fixed-header
+      height="500px"
   ></v-data-table>
 </template>
 

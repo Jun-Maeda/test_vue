@@ -25,6 +25,14 @@
           label="選択してください"
           required
       ></v-select>
+
+      <v-autocomplete
+          :items="[{'id':1,'name':'user1'},{'id':2,'name':'user2'},{'id':3,'name':'user3'}]"
+          label="検索して選択してください"
+          required
+          v-model="autocomp"
+          :item-props="itemProps"
+      ></v-autocomplete>
       <v-text-field
           label="日付と時間"
           type="datetime-local"
@@ -153,6 +161,21 @@ export default {
       required: value => !!value || 'この項目は必須です',
     },
     dialog: false,
+    autocomp:'',
   }),
+  methods: {
+    itemProps(item) {
+      if(item === ""){
+        return ""
+      }
+      else{
+        return {
+        title: item.name,
+        subtitle: item.id,
+        value: item.id
+      }
+      }
+    }
+  }
 }
 </script>

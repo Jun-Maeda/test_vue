@@ -62,7 +62,7 @@ import {RouterView} from 'vue-router'
             :key="link"
             color="white"
             variant="text"
-            class="mx-2"
+            class="mx-2 v-col-3 v-col-md-1"
             rounded="xl"
         >
           {{ link }}
@@ -91,12 +91,13 @@ export default {
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
       {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},
       {title: 'PiVToT Get', to: '/pivtot_get', icon: 'mdi-image-filter-hdr'},
+      {title: 'PiVToT Post', to: '/pivtot_post', icon: 'mdi-thumb-up-outline'},
     ],
     drawer: false,
     links: [
       'Home',
-      'About Us',
-      'Contact Us',
+      'About',
+      'Contact',
     ],
   }),
 }

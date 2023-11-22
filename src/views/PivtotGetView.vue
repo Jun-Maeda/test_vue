@@ -3,6 +3,28 @@
 </script>
 
 <template>
+  <v-text-field
+      v-model="search"
+      label="検索"
+      prepend-inner-icon="mdi-magnify"
+      single-line
+      variant="outlined"
+      hide-details
+      class="v-col-sm-10 v-col-md-4 pa-0"
+  ></v-text-field>
+
+  <v-data-table
+      :headers="headers"
+      :items="units"
+      :search="search"
+  >
+    <!--    管理者名列の表示をカスタム-->
+    <template v-slot:[`item.admin_screenname`]="props">
+      【{{ props.item.admin_username }}】
+      {{ props.item.admin_screenname }}
+    </template>
+
+  </v-data-table>
   <v-card
       title="グループ詳細"
   >
@@ -36,8 +58,8 @@
           <td>契約サービス</td>
           <td>
             <ul>
-              <li v-for="s in unit_details['service']">
-                {{ s['name'] }}
+              <li v-for="(item, key) in unit_details['service']" v-bind:key='key'>
+                {{ item['name'] }}
               </li>
             </ul>
           </td>
@@ -52,25 +74,32 @@
 
 <script>
 const url = "http://127.0.0.1:8000/api/v1/user/units/1"
+const units_url = "http://127.0.0.1:8000/api/v1/user/units/"
+
 export default {
   data: () => ({
+    search: '',
     headers: [
-      {
-        align: 'start',
-        key: 'id',
-        title: 'ID',
-      },
-      {key: 'name', align: 'end', title: '名前'},
-      {key: 'gender', align: 'end', title: '性別'},
-      {key: 'house', align: 'end', title: '寮'},
-      {key: 'dateOfBirth', align: 'end', title: '誕生日'},
-      {key: 'actor', align: 'end', title: '役者名'},
+      {key: 'id', align: 'end', title: 'ID'},
+      {key: 'name', align: 'start', title: 'グループ名'},
+      {key: 'admin_screenname', align: 'start', title: '管理者名'},
+      {key: 'share_flg', align: 'start', title: '共有フラグ'},
     ],
+    units: [],
     unit_details: [],
   }),
   mounted() {
     this.axios.get(url).then((res) => {
       this.unit_details = res.data;
+    }).catch((err) => {
+      alert('このデータはありません')
+      console.log(err)
+    })
+    this.axios.get(units_url).then((res) => {
+      this.units = res.data;
+    }).catch((err) => {
+      alert('取得できませんでした。')
+      console.log(err)
     })
   }
 }
