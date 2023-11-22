@@ -43,6 +43,11 @@ const router = createRouter({
       path: '/tab',
       name: 'tab',
       component: () => import('../views/TabView.vue')
+    },
+    {
+      path: '/pivtot_get',
+      name: 'pivtot_get',
+      component: () => import('../views/PivtotGetView.vue')
     }
   ]
 })

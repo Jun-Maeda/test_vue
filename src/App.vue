@@ -90,6 +90,7 @@ export default {
       {title: 'tab', to: '/tab', icon: 'mdi-earth'},
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
       {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},
+      {title: 'PiVToT Get', to: '/pivtot_get', icon: 'mdi-image-filter-hdr'},
     ],
     drawer: false,
     links: [
