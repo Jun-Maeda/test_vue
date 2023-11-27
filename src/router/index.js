@@ -53,6 +53,11 @@ const router = createRouter({
       path: '/pivtot_post',
       name: 'pivtot_post',
       component: () => import('../views/PivtotPostView.vue')
+    },
+    {
+      path: '/nyumon',
+      name: 'nyumon',
+      component: () => import('../views/NyuMonView.vue')
     }
   ]
 })

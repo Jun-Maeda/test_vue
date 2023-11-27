@@ -8,7 +8,7 @@ import {RouterView} from 'vue-router'
 
 
   <v-layout class="rounded rounded-md">
-    <v-app-bar scroll-threshold="0">
+    <v-app-bar scroll-threshold="0" class="pa-0">
       <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Test Vue</v-toolbar-title>
       <div v-show="login">
@@ -34,6 +34,60 @@ import {RouterView} from 'vue-router'
         temporary
     >
       <v-list>
+        <v-list-item
+              value="Home"
+              color="primary"
+              rounded="xl"
+              to="/"
+              prepend-icon="mdi-home"
+              title="Home"
+              class="mt-1"
+        ></v-list-item>
+        <v-list-group value="tables">
+          <template v-slot:activator="{ props }">
+            <v-list-item
+                v-bind="props"
+                title="Tables"
+                prepend-icon="mdi-phone-outgoing"
+            >
+            </v-list-item>
+          </template>
+          <v-list-item
+              v-for="(table, i) in tables"
+              v-bind="props"
+              :key="i"
+              :value="table"
+              color="primary"
+              rounded="xl"
+              :to="table.to"
+              :prepend-icon="table.icon"
+              :title="table.title"
+          >
+          </v-list-item>
+        </v-list-group>
+        <v-list-group value="pivtots">
+          <template v-slot:activator="{ props }">
+            <v-list-item
+                v-bind="props"
+                title="PiVToT"
+                prepend-icon="mdi-phone-outgoing"
+            >
+            </v-list-item>
+          </template>
+          <v-list-item
+              v-for="(pivtot, i) in pivtots"
+              v-bind="props"
+              :key="i"
+              :value="pivtot"
+              color="primary"
+              rounded="xl"
+              :to="pivtot.to"
+              :prepend-icon="pivtot.icon"
+              :title="pivtot.title"
+          >
+          </v-list-item>
+        </v-list-group>
+
         <v-list-item-group>
           <v-list-item
               v-for="(item, i) in items"
@@ -82,14 +136,18 @@ export default {
   data: () => ({
     login: true,
     items: [
-      {title: 'Home', to: '/', icon: 'mdi-home'},
       {title: 'About', to: '/about', icon: 'mdi-clock'},
       {title: 'Form', to: '/form', icon: 'mdi-map-marker'},
-      {title: 'Table', to: '/table', icon: 'mdi-phone-outgoing'},
-      {title: 'Table2', to: '/table2', icon: 'mdi-alert-circle-outline'},
       {title: 'tab', to: '/tab', icon: 'mdi-earth'},
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
       {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},
+      {title: '入門', to: '/nyumon', icon: 'mdi-magic-staff'},
+    ],
+    tables: [
+      {title: 'Table', to: '/table', icon: 'mdi-phone-outgoing'},
+      {title: 'Table2', to: '/table2', icon: 'mdi-alert-circle-outline'},
+    ],
+    pivtots: [
       {title: 'PiVToT Get', to: '/pivtot_get', icon: 'mdi-image-filter-hdr'},
       {title: 'PiVToT Post', to: '/pivtot_post', icon: 'mdi-thumb-up-outline'},
     ],
