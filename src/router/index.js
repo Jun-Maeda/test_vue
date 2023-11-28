@@ -58,6 +58,21 @@ const router = createRouter({
       path: '/nyumon',
       name: 'nyumon',
       component: () => import('../views/NyuMonView.vue')
+    },
+    {
+      path: '/pinia',
+      name: 'pinia',
+      component: () => import('../views/PiniaView.vue')
+    },
+    {
+      path: '/pinia2',
+      name: 'pinia2',
+      component: () => import('../views/Pinia2View.vue')
+    },
+    {
+      path: '/form_send',
+      name: 'form_send',
+      component: () => import('../views/FormSendView.vue')
     }
   ]
 })

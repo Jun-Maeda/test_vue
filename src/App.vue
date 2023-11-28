@@ -138,10 +138,13 @@ export default {
     items: [
       {title: 'About', to: '/about', icon: 'mdi-clock'},
       {title: 'Form', to: '/form', icon: 'mdi-map-marker'},
+      {title: 'Form Send', to: '/form_send', icon: 'mdi-map-marker'},
       {title: 'tab', to: '/tab', icon: 'mdi-earth'},
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
       {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},
-      {title: '入門', to: '/nyumon', icon: 'mdi-magic-staff'},
+      {title: '入門', to: '/nyumon', icon: 'mdi-arrow-left-bold'},
+      {title: 'Pinia', to: '/pinia', icon: 'mdi-image-filter-drama'},
+      {title: 'Pinia2', to: '/pinia2', icon: 'mdi-image-filter-drama'},
     ],
     tables: [
       {title: 'Table', to: '/table', icon: 'mdi-phone-outgoing'},
