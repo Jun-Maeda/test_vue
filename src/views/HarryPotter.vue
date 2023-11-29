@@ -23,6 +23,7 @@
       :search="search"
       fixed-header
       height="500px"
+      @click:row="clickRow"
   ></v-data-table>
 </template>
 
@@ -49,6 +50,11 @@ export default {
     this.axios.get(url).then((res) => {
       this.characters = res.data;
     })
+  },
+  methods: {
+    clickRow(item, row) {
+      console.log('clickRow', row.item.actor)
+    }
   }
 }
 </script>

@@ -73,6 +73,11 @@ const router = createRouter({
       path: '/form_send',
       name: 'form_send',
       component: () => import('../views/FormSendView.vue')
+    },
+    {
+      path: '/form_validate',
+      name: 'form_validate',
+      component: () => import('../views/FormValidate.vue')
     }
   ]
 })

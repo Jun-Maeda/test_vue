@@ -139,6 +139,7 @@ export default {
       {title: 'About', to: '/about', icon: 'mdi-clock'},
       {title: 'Form', to: '/form', icon: 'mdi-map-marker'},
       {title: 'Form Send', to: '/form_send', icon: 'mdi-map-marker'},
+      {title: 'Form Validate', to: '/form_validate', icon: 'mdi-map-marker'},
       {title: 'tab', to: '/tab', icon: 'mdi-earth'},
       {title: 'ZipCode', to: '/zipcode', icon: 'mdi-spider-thread'},
       {title: 'HarryPotter', to: '/harry', icon: 'mdi-magic-staff'},

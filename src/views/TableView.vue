@@ -8,6 +8,7 @@
       item-value="name"
       item-selectable="selectable"
       show-select
+      @click:row="clickRow"
   ></v-data-table>
 
 
@@ -74,6 +75,11 @@ export default {
       },
     ],
   }),
+  methods: {
+    clickRow(item, row) {
+      console.log('clickRow', row.item.location)
+    }
+  }
 }
 
 </script>
