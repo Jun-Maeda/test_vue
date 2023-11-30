@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-btn prepend-icon="$vuetify">
-      Button
-    </v-btn>
+<!--    <v-btn prepend-icon="$vuetify">-->
+<!--      Button-->
+<!--    </v-btn>-->
 
     <v-select
         v-model="value"

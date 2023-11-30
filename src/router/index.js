@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('../views/TableView2.vue')
     },
     {
+      path: '/chart',
+      name: 'chart',
+      component: () => import('../views/ChartView.vue')
+    },
+    {
       path: '/zipcode',
       name: 'zipcode',
       component: () => import('../views/ZipView.vue')

@@ -21,7 +21,7 @@ import {useCounterStore} from '@/stores/counter';
 
 const counter = useCounterStore();
 
-storeの
+
 const patch = () => {
   counter.$patch({
     count: 100,

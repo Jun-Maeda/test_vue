@@ -78,6 +78,7 @@ export default {
   methods: {
     clickRow(item, row) {
       console.log('clickRow', row.item.location)
+      alert(row.item.location)
     }
   }
 }

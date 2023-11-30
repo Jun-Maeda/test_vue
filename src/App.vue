@@ -106,6 +106,7 @@ import {RouterView} from 'vue-router'
 
     <v-main>
       <v-container>
+        <line-chart></line-chart>
         <RouterView/>
       </v-container>
     </v-main>
@@ -146,6 +147,7 @@ export default {
       {title: '入門', to: '/nyumon', icon: 'mdi-arrow-left-bold'},
       {title: 'Pinia', to: '/pinia', icon: 'mdi-image-filter-drama'},
       {title: 'Pinia2', to: '/pinia2', icon: 'mdi-image-filter-drama'},
+      {title: 'Chart', to: '/chart', icon: 'mdi-image-filter-drama'},
     ],
     tables: [
       {title: 'Table', to: '/table', icon: 'mdi-phone-outgoing'},
