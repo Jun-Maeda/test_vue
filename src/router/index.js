@@ -83,6 +83,11 @@ const router = createRouter({
       path: '/form_validate',
       name: 'form_validate',
       component: () => import('../views/FormValidate.vue')
+    },
+    {
+      path: '/rich_text',
+      name: 'rich_text',
+      component: () => import('../views/RichText.vue')
     }
   ]
 })
