@@ -1,5 +1,6 @@
 <script setup>
 import {RouterView} from 'vue-router'
+import SideBar from '@/views/SideBar.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 
 </script>
@@ -28,81 +29,7 @@ import {RouterView} from 'vue-router'
       </div>
     </v-app-bar>
 
-    <v-navigation-drawer
-        v-model="drawer"
-        absolute
-        temporary
-    >
-      <v-list>
-        <v-list-item
-              value="Home"
-              color="primary"
-              rounded="xl"
-              to="/"
-              prepend-icon="mdi-home"
-              title="Home"
-              class="mt-1"
-        ></v-list-item>
-        <v-list-group value="tables">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-                v-bind="props"
-                title="Tables"
-                prepend-icon="mdi-phone-outgoing"
-            >
-            </v-list-item>
-          </template>
-          <v-list-item
-              v-for="(table, i) in tables"
-              v-bind="props"
-              :key="i"
-              :value="table"
-              color="primary"
-              rounded="xl"
-              :to="table.to"
-              :prepend-icon="table.icon"
-              :title="table.title"
-          >
-          </v-list-item>
-        </v-list-group>
-        <v-list-group value="pivtots">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-                v-bind="props"
-                title="PiVToT"
-                prepend-icon="mdi-phone-outgoing"
-            >
-            </v-list-item>
-          </template>
-          <v-list-item
-              v-for="(pivtot, i) in pivtots"
-              v-bind="props"
-              :key="i"
-              :value="pivtot"
-              color="primary"
-              rounded="xl"
-              :to="pivtot.to"
-              :prepend-icon="pivtot.icon"
-              :title="pivtot.title"
-          >
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-item-group>
-          <v-list-item
-              v-for="(item, i) in items"
-              :key="i"
-              :value="item"
-              color="primary"
-              rounded="xl"
-              :to="item.to"
-              :prepend-icon="item.icon"
-              :title="item.title"
-          >
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
+    <SideBar v-model:drawer="drawer"/>
 
     <v-main>
       <v-container>
