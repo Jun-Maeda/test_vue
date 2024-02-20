@@ -88,6 +88,16 @@ const router = createRouter({
       path: '/rich_text',
       name: 'rich_text',
       component: () => import('../views/RichText.vue')
+    },
+    {
+      path: '/table_new',
+      name: 'table_new',
+      component: () => import('../views/TableNew.vue')
+    },
+    {
+      path: '/form_new',
+      name: 'form_new',
+      component: () => import('../views/FormNew.vue')
     }
   ]
 })

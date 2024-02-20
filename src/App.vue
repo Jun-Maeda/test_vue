@@ -13,7 +13,7 @@ import SideBar from '@/views/SideBar.vue'
       <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Test Vue</v-toolbar-title>
       <div v-show="login">
-        <v-btn icon="mdi-account-cog-outline" size="x-large"/>
+        <v-btn icon="mdi-account-cog-outline" size="x-large" @click="$router.go({name: 'form', force: true})"/>
       </div>
       <div v-show="login">
         <!--        <v-btn prepend-icon="mdi-logout" variant="outlined">-->
